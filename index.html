@@ -1,229 +1,71 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/ledger/css/bootstrap.css">
-
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/ledger/css/custom.css">
-
-    <!-- Material Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+    <link rel="stylesheet" href="file:///Users/tylerwellman/Documents/ledger1/css/custom.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
-
-    <title>journal</title>
+    <!-- Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>a = l + e</title>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col">
+    <div class="navigation">
 
-          <!-- Headings -->
-          <div class="row heading">
-            <p class="headingRemaining"></p>
-            <p class="headingDebit">debit</p>
-            <p class="headingCredit">credit</p>
+    </div>
+    <h1 class="label label-journal">journal</h1>
+    <div class="journal">
+      <a class="header column-debit">debit</a>
+      <a class="header column-credit">credit</a>
+      <div class="entry-space">
+        <!-- Entry 0 -->
+
+        <div id="entry0" class="entry">
+          <h2 class="label label-entry">entry</h2>
+          <!-- Entry date, description -->
+          <div class="entry-attributes">
+            <input type="date">
+            <input type="text" placeholder="journal entry description">
           </div>
-
-          <!-- Journal -->
-          <div class="journal">
-
-            <!-- Journal entry 0 -->
-            <div id="je0" class="journalEntry row no-display">
-              <div>
-
-                <!-- Journal entry date, description -->
-                <div class="jeAttributes input-group">
-                  <input type="date" class="jeDate form-control">
-                  <input type="text" class="jeDescription form-control" placeholder="journal entry description">
-                </div>
-
-                <!-- Journal row 0 -->
-                <div id="jr0" class="journalRow input-group debit no-display">
-                  <select class="accountType custom-select">
-                    <option selected>account type</option>
-                    <option value="asset">asset</option>
-                    <option value="liability">liability</option>
-                    <option value="equity">equity</option>
-                  </select>
-                  <input type="text" class="accountName form-control" placeholder="account name">
-                  <div class="input-group-append input-group-prepend">
-                    <span class="input-group-text dollar-sign">$</span>
-                  </div>
-                  <input type="number" class="amount form-control text-right">
-                  <i class="material-icons makeDebit arrow no-display">arrow_back</i>
-                  <i class="material-icons makeCredit arrow">arrow_forward</i>
-                </div>
-
-                <!-- Journal row 1 -->
-                <div id="jr1" class="journalRow input-group credit no-display">
-                  <select class="accountType custom-select">
-                    <option selected>account type</option>
-                    <option value="asset">asset</option>
-                    <option value="liability">liability</option>
-                    <option value="equity">equity</option>
-                  </select>
-                  <input type="text" class="accountName form-control" placeholder="account name">
-                  <div class="input-group-append input-group-prepend">
-                    <span class="input-group-text dollar-sign">$</span>
-                  </div>
-                  <input type="number" class="amount form-control text-right">
-                  <i class="material-icons makeDebit arrow">arrow_back</i>
-                  <i class="material-icons makeCredit arrow no-display">arrow_forward</i>
-                </div>
-                <i class="newjournalRow">&nbsp;</i>
-              </div>
-            </div>
-
-            <!-- Journal entry 1 -->
-            <div id="je1" class="journalEntry row">
-              <div>
-
-                <!-- Journal entry date, description -->
-                <div class="jeAttributes input-group">
-                  <input type="date" class="jeDate form-control">
-                  <input type="text" class="jeDescription form-control" placeholder="journal entry description">
-                </div>
-
-                <!-- Journal row 2 -->
-                <div id="jr2" class="journalRow random input-group debit">
-                  <select class="accountType custom-select">
-                    <option selected>account type</option>
-                    <option value="asset">asset</option>
-                    <option value="liability">liability</option>
-                    <option value="equity">equity</option>
-                  </select>
-                  <input type="text" class="accountName form-control" placeholder="account name">
-                  <div class="input-group-append input-group-prepend">
-                    <span class="input-group-text dollar-sign">$</span>
-                  </div>
-                  <input type="number" class="amount form-control text-right">
-                  <i class="material-icons makeDebit arrow no-display">arrow_back</i>
-                  <i class="material-icons makeCredit arrow">arrow_forward</i>
-                </div>
-
-                <!-- Journal row 3 -->
-                <div id="jr3" class="journalRow input-group credit">
-                  <select class="accountType custom-select">
-                    <option selected>account type</option>
-                    <option value="asset">asset</option>
-                    <option value="liability">liability</option>
-                    <option value="equity">equity</option>
-                  </select>
-                  <input type="text" class="accountName form-control" placeholder="account name">
-                  <div class="input-group-append input-group-prepend">
-                    <span class="input-group-text dollar-sign">$</span>
-                  </div>
-                  <input type="number" class="amount form-control text-right">
-                  <i class="material-icons makeDebit arrow">arrow_back</i>
-                  <i class="material-icons makeCredit arrow no-display">arrow_forward</i>
-                </div>
-                <i class="newjournalRow">&nbsp;</i>
-              </div>
-            </div>
-            <i class="material-icons newJournalEntry">add</i>
+          <!-- Entry row -->
+          <div id="row0" class="row debit">
+            <select class="type">
+              <option selected>account type</option>
+              <option value="asset">asset</option>
+              <option value="liability">liability</option>
+              <option value="equity">equity</option>
+            </select>
+            <input type="text" class="account" placeholder="account name">
+            <span class="dollar-sign">$</span>
+            <input type="number" class="amount">
+            <i class="material-icons no-display">arrow_back</i>
+            <i class="material-icons">arrow_forward</i>
           </div>
-
-          <!-- Ledger -->
-          <div class="ledger">
-            <!-- Equation -->
-            <div class="container text-center equation">
-              <div class="row">
-                <div class="col">
-                  <!-- Equal sign -->
-                  <div class="container operator">
-                    <div class="row">
-                      <div class="col-12"><h2>=</h2></div>
-                    </div>
-                  </div>
-                  <!-- Plus sign -->
-                  <div class="container operator">
-                    <div class="row">
-                      <div class="col-6"></div>
-                      <div class="col-6"><h2>+</h2></div>
-                    </div>
-                  </div>
-                  <!-- Assets liabilities equity text -->
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-6"><h2>assets</h2></div>
-                      <div class="col-3"><h2>liabilities</h2></div>
-                      <div class="col-3"><h2>equity</h2></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Bucket -->
-            <div class="container text-center bucket">
-              <div class="row">
-                <div class="col">
-                      <!-- Assets -->
-                      <div class="col-6 assets">
-                        <!-- T-account initial -->
-                        <div id="asset" class="t-account no-display">
-                          <p class="t-account-title">asset</p>
-                          <table id="table-asset" class="table">
-                            <thead>
-                              <tr>
-                                <th scope="col" class="dr">dr (+)</th>
-                                <th scope="col">cr (-)</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td class="dr"></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                        <!-- T-account cash -->
-                        <div id="cash" class="t-account no-display">
-                          <p class="t-account-title">Cash</p>
-                          <table id="table-cash" class="table">
-                            <thead>
-                              <tr>
-                                <th scope="col" class="dr">dr (+)</th>
-                                <th scope="col">cr (-)</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td class="dr"></td>
-                                <td></td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                      <div class="col-3 liabilities"></div>
-                      <div class="col-3 equity"></div>
-                </div>
-              </div>
-            </div>
+          <!-- Entry row -->
+          <div id="row1" class="row credit">
+            <select class="type">
+              <option selected>account type</option>
+              <option value="asset">asset</option>
+              <option value="liability">liability</option>
+              <option value="equity">equity</option>
+            </select>
+            <input type="text" class="account" placeholder="account name">
+            <span class="dollar-sign">$</span>
+            <input type="number" class="amount">
+            <i class="material-icons no-display">arrow_back</i>
+            <i class="material-icons">arrow_forward</i>
           </div>
         </div>
       </div>
     </div>
+    <h1 class="label label-ledger">ledger</h1>
+    <div class="ledger">
 
+    </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <!-- Custom JavaScript-->
-    <script src="/ledger/js/custom.js" charset="utf-8"></script>
-
+    <!-- Custom JS -->
+    <script src="file:///Users/tylerwellman/Documents/ledger1/js/custom.js" charset="utf-8"></script>
 
   </body>
 </html>
