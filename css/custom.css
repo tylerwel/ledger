@@ -199,7 +199,6 @@ input[type=date]::-webkit-outer-spin-button {
 
 .new-entry {
   grid-column: 1 / 7;
-  /* display: table !important; */
   margin: auto;
   cursor: pointer;
   color: #ced4da;
