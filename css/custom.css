@@ -111,8 +111,8 @@ body .no-display {
   background-color: var(--colorLight);
   border: solid 1px transparent;
   border-radius: 20rem;
-  margin-top: 0.15em;
-  margin-bottom: 0.15em;
+  margin-top: 0.15rem;
+  margin-bottom: 0.15rem;
 }
 
 .entry input, select {
@@ -178,4 +178,21 @@ input[type=date]::-webkit-outer-spin-button {
   margin-bottom: auto;
   color: #ced4da;
   font-size: 1.1rem;
+}
+
+.new-row {
+  grid-column: 1 / 7;
+  content: "";
+  width: 50%;
+  margin-left: 25%;
+  margin-right: auto;
+  border-top: 4px solid #F2F2F2;
+  cursor: pointer;
+  font-size: .5em;
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.new-row:hover {
+  border-top: 4px solid #ced4da;
 }
