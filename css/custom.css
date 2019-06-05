@@ -196,3 +196,11 @@ input[type=date]::-webkit-outer-spin-button {
 .new-row:hover {
   border-top: 4px solid #ced4da;
 }
+
+.new-entry {
+  grid-column: 1 / 7;
+  /* display: table !important; */
+  margin: auto;
+  cursor: pointer;
+  color: #ced4da;
+}
