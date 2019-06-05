@@ -79,18 +79,6 @@ function makeCredit() {
   var makeCredit = document.getElementsByClassName("make-credit");
   for(var i = 0; i < makeCredit.length; i++) {
 
-    // when hovering over a make credit arrow, swing animate the journal entry row
-    makeCredit[i].addEventListener("mouseover", function() {
-      // select this journal entry row to animate
-      var journalRow = this.parentElement;
-      // add the swing class
-      journalRow.classList.add("swing-right");
-      // after one second, remove the swing class so that it can be added back again later
-      setTimeout(function() {
-        journalRow.classList.remove("swing-right");
-      }, 1000);
-    });
-
     // when clicking a make credit arrow, move the journal entry row to the right
     makeCredit[i].addEventListener("click", function() {
       // select this journal entry row
@@ -117,18 +105,6 @@ makeDebit();
 function makeDebit() {
   var makeDebit = document.getElementsByClassName("make-debit");
   for(var i = 0; i < makeDebit.length; i++) {
-
-    // when hovering over a make debit arrow, swing animate the journal entry row
-    makeDebit[i].addEventListener("mouseover", function() {
-      // select this journal entry row to animate
-      var journalRow = this.parentElement;
-      // add the swing class
-      journalRow.classList.add("swing-left");
-      // after one second, remove the swing class so that it can be added back again later
-      setTimeout(function() {
-        journalRow.classList.remove("swing-left");
-      }, 1000);
-    });
 
     // when clicking a make debit arrow, move the journal entry to the left
     makeDebit[i].addEventListener("click", function() {
