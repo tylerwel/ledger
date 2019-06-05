@@ -206,8 +206,8 @@ input[type=date]::-webkit-outer-spin-button {
 
 .swing-right
 {
-  -webkit-animation: swing 1.5s ease;
-  animation: swing 1.5s ease;
+  -webkit-animation: swing-right 1.5s ease;
+  animation: swing-right 1.5s ease;
   -webkit-animation-iteration-count: .25;
   animation-iteration-count: .25;
 }
@@ -216,28 +216,28 @@ input[type=date]::-webkit-outer-spin-button {
 {
     15%
     {
-        -webkit-transform: translateX(5px);
-        transform: translateX(5px);
+        -webkit-transform: translateX(5%);
+        transform: translateX(5%);
     }
     30%
     {
-        -webkit-transform: translateX(-5px);
-       transform: translateX(-5px);
+        -webkit-transform: translateX(10%);
+       transform: translateX(10%);
     }
     50%
     {
-        -webkit-transform: translateX(3px);
-        transform: translateX(3px);
+        -webkit-transform: translateX(15%);
+        transform: translateX(15%);
     }
     65%
     {
-        -webkit-transform: translateX(-3px);
-        transform: translateX(-3px);
+        -webkit-transform: translateX(20%);
+        transform: translateX(20);
     }
     80%
     {
-        -webkit-transform: translateX(2px);
-        transform: translateX(2px);
+        -webkit-transform: translateX(30%);
+        transform: translateX(30%);
     }
     100%
     {
@@ -247,36 +247,36 @@ input[type=date]::-webkit-outer-spin-button {
 }
 @keyframes swing-right
 {
-    15%
-    {
-        -webkit-transform: translateX(5px);
-        transform: translateX(5px);
-    }
-    30%
-    {
-        -webkit-transform: translateX(-5px);
-        transform: translateX(-5px);
-    }
-    50%
-    {
-        -webkit-transform: translateX(3px);
-        transform: translateX(3px);
-    }
-    65%
-    {
-        -webkit-transform: translateX(-3px);
-        transform: translateX(-3px);
-    }
-    80%
-    {
-        -webkit-transform: translateX(2px);
-        transform: translateX(2px);
-    }
-    100%
-    {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-    }
+  15%
+  {
+      -webkit-transform: translateX(0%);
+      transform: translateX(0%);
+  }
+  30%
+  {
+      -webkit-transform: translateX(-2%);
+     transform: translateX(-2%);
+  }
+  50%
+  {
+      -webkit-transform: translateX(-5%);
+      transform: translateX(-5%);
+  }
+  65%
+  {
+      -webkit-transform: translateX(5%);
+      transform: translateX(5);
+  }
+  80%
+  {
+      -webkit-transform: translateX(2%);
+      transform: translateX(2%);
+  }
+  100%
+  {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+  }
 }
 
 .swing-left

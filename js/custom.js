@@ -72,3 +72,79 @@ function generateColor(rowID) {
   row.style.setProperty("--colorLight", "#" + colorLight);
   row.style.setProperty("--colorDark", "#" + colorDark);
 }
+
+makeCredit();
+// makeCredit action
+function makeCredit() {
+  var makeCredit = document.getElementsByClassName("make-credit");
+  for(var i = 0; i < makeCredit.length; i++) {
+
+    // when hovering over a make credit arrow, swing animate the journal entry row
+    makeCredit[i].addEventListener("mouseover", function() {
+      // select this journal entry row to animate
+      var journalRow = this.parentElement;
+      // add the swing class
+      journalRow.classList.add("swing-right");
+      // after one second, remove the swing class so that it can be added back again later
+      setTimeout(function() {
+        journalRow.classList.remove("swing-right");
+      }, 1000);
+    });
+
+    // when clicking a make credit arrow, move the journal entry row to the right
+    makeCredit[i].addEventListener("click", function() {
+      // select this journal entry row
+      var journalRow = this.parentElement;
+      // select the make debit arrow
+      var makeDebit = this.previousElementSibling;
+        // hide this make credit arrow
+        this.classList.add("no-display");
+        // remove the debit class from the journal entry row
+        journalRow.classList.remove("debit");
+        // add the credit class to the journal entry row
+        journalRow.classList.add("credit");
+        // remove the no-display class from the made debit arrow
+        makeDebit.classList.remove("no-display");
+
+    });
+
+
+  }
+}
+
+makeDebit();
+// makeDebit action
+function makeDebit() {
+  var makeDebit = document.getElementsByClassName("make-debit");
+  for(var i = 0; i < makeDebit.length; i++) {
+
+    // when hovering over a make debit arrow, swing animate the journal entry row
+    makeDebit[i].addEventListener("mouseover", function() {
+      // select this journal entry row to animate
+      var journalRow = this.parentElement;
+      // add the swing class
+      journalRow.classList.add("swing-left");
+      // after one second, remove the swing class so that it can be added back again later
+      setTimeout(function() {
+        journalRow.classList.remove("swing-left");
+      }, 1000);
+    });
+
+    // when clicking a make debit arrow, move the journal entry to the left
+    makeDebit[i].addEventListener("click", function() {
+      // select this journal entry row
+      var journalRow = this.parentElement;
+      // select this make credit arrow
+      var makeCredit = this.nextElementSibling;
+        // hide this make credit arrow
+        this.classList.add("no-display");
+        // remove the credit class from the journal entry row
+        journalRow.classList.remove("credit");
+        // add the debit class to the journal entry row
+        journalRow.classList.add("debit");
+        // remove the no-display class from the make credit arrow
+        makeCredit.classList.remove("no-display");
+
+    });
+  }
+}
