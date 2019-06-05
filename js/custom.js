@@ -1,4 +1,7 @@
-
+// generate random background color for the first row
+generateColor(row0.id);
+// generate random background color for the second row
+generateColor(row1.id);
 
 // for each row, generate new random background color for that row
 function generateColor(rowID) {

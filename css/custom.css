@@ -31,6 +31,7 @@ body .no-display {
   grid-template-rows: 2em auto;
   grid-template-columns: 1fr 6.5em 6.5em 2em;
   border-left: 2px solid black;
+  margin-right: 2rem;
 }
 
 .label {
@@ -68,6 +69,8 @@ body .no-display {
 
 .ledger {
   grid-area: ledger;
+  border-left: 2px solid black;
+  margin-right: 2rem;
 }
 
 .entry-space {
@@ -83,9 +86,9 @@ body .no-display {
   display: grid;
   grid-template-areas:  "label-entry date entry debit credit hangover";
   grid-template-columns: 2em 0.5fr 5.5fr 6.5em 6.5em 2em;
-  margin-top: 1em;
   margin-bottom: 1em;
   margin-left: 1em;
+  border-left: 2px solid black;
 }
 
 .label-entry {
@@ -116,6 +119,7 @@ body .no-display {
   border: 0;
   font-size: 1rem;
   color: #495057;
+  background-color: transparent;
 }
 
 .entry input {
@@ -166,7 +170,7 @@ input[type=date]::-webkit-outer-spin-button {
 }
 
 .material-icons:hover {
-  color: #000;
+  color: #00000060;
 }
 
 .dollar-sign {
