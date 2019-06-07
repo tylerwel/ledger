@@ -73,13 +73,15 @@ function generateColor(rowID) {
   row.style.setProperty("--colorDark", "#" + colorDark);
 }
 
+// when makeCredit arrow is clicked
 makeCredit();
 // makeCredit action
 function makeCredit() {
+  // select every make-credit arrow
   var makeCredit = document.getElementsByClassName("make-credit");
+  // for each arrow,
   for(var i = 0; i < makeCredit.length; i++) {
-
-    // when clicking a make credit arrow, move the journal entry row to the right
+    // on click,
     makeCredit[i].addEventListener("click", function() {
       // select this journal entry row
       var journalRow = this.parentElement;
@@ -100,13 +102,15 @@ function makeCredit() {
   }
 }
 
+// when makeDebit arrow is clicked
 makeDebit();
 // makeDebit action
 function makeDebit() {
+  // select every make-debit arrow
   var makeDebit = document.getElementsByClassName("make-debit");
+  // for each arrow,
   for(var i = 0; i < makeDebit.length; i++) {
-
-    // when clicking a make debit arrow, move the journal entry to the left
+    // on click,
     makeDebit[i].addEventListener("click", function() {
       // select this journal entry row
       var journalRow = this.parentElement;
@@ -120,7 +124,6 @@ function makeDebit() {
         journalRow.classList.add("debit");
         // remove the no-display class from the make credit arrow
         makeCredit.classList.remove("no-display");
-
     });
   }
 }
