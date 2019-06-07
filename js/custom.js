@@ -1,6 +1,10 @@
 // generate random background color for the first row
-generateColor(row2.id);
+generateColor(row0.id);
 // generate random background color for the second row
+generateColor(row1.id);
+// generate random background color for the third row
+generateColor(row2.id);
+// generate random background color for the fourth row
 generateColor(row3.id);
 // for each row, generate new random background color for that row
 function generateColor(rowID) {
@@ -155,10 +159,16 @@ function newRow() {
         // duplicate the original credit row
         clone = creditRow.cloneNode("true");
       }
+      // put the clone above the new-row icon
+      this.parentElement.insertBefore(clone, this);
       // remove class "no-display" from clone
       clone.classList.remove("no-display");
-      // set new ID for clone
       // generate color for clone
+      generateColor(clone.id);
+      // initialize makeCredit
+      makeCredit();
+      // initialize makeDebit
+      makeDebit();
     })
 
   }
