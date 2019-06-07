@@ -143,10 +143,22 @@ function newRow() {
     newRow[i].addEventListener("click", function() {
       // if the row above is debit,
       if(this.previousElementSibling.classList.contains("debit")) {
+        // select the original debit row
+        var debitRow = document.getElementById("row0");
         // duplicate the original debit row
+        clone = debitRow.cloneNode("true");
       }
       // else,
+      else {
+        // select the original credit row
+        var creditRow = document.getElementById("row1");
         // duplicate the original credit row
+        clone = creditRow.cloneNode("true");
+      }
+      // remove class "no-display" from clone
+      clone.classList.remove("no-display");
+      // set new ID for clone
+      // generate color for clone
     })
 
   }
