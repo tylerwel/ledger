@@ -2,7 +2,6 @@
 generateColor(row0.id);
 // generate random background color for the second row
 generateColor(row1.id);
-
 // for each row, generate new random background color for that row
 function generateColor(rowID) {
   // get the journalRow
@@ -64,22 +63,31 @@ function generateColor(rowID) {
     "568DAC",
     "1B3242"
   ];
+  // select a random color from the list
   var color = colorArray[Math.floor(Math.random()*colorArray.length)];
+  // this is the opacity for the light color
   var light = 23;
+  // this is the opacity for the dark color
   var dark = 40;
+  // combine the random color and add the light opacity
   var colorLight = color + light;
+  // combine the random color and add the dark opacity
   var colorDark = color + dark;
+  // set the random light color
   row.style.setProperty("--colorLight", "#" + colorLight);
+  // set the random dark color
   row.style.setProperty("--colorDark", "#" + colorDark);
 }
 
+// when makeCredit arrow is clicked
 makeCredit();
 // makeCredit action
 function makeCredit() {
+  // select every make-credit arrow
   var makeCredit = document.getElementsByClassName("make-credit");
+  // for each arrow,
   for(var i = 0; i < makeCredit.length; i++) {
-
-    // when clicking a make credit arrow, move the journal entry row to the right
+    // on click,
     makeCredit[i].addEventListener("click", function() {
       // select this journal entry row
       var journalRow = this.parentElement;
@@ -93,20 +101,19 @@ function makeCredit() {
         journalRow.classList.add("credit");
         // remove the no-display class from the made debit arrow
         makeDebit.classList.remove("no-display");
-
     });
-
-
   }
 }
 
+// when makeDebit arrow is clicked
 makeDebit();
 // makeDebit action
 function makeDebit() {
+  // select every make-debit arrow
   var makeDebit = document.getElementsByClassName("make-debit");
+  // for each arrow,
   for(var i = 0; i < makeDebit.length; i++) {
-
-    // when clicking a make debit arrow, move the journal entry to the left
+    // on click,
     makeDebit[i].addEventListener("click", function() {
       // select this journal entry row
       var journalRow = this.parentElement;
@@ -120,7 +127,6 @@ function makeDebit() {
         journalRow.classList.add("debit");
         // remove the no-display class from the make credit arrow
         makeCredit.classList.remove("no-display");
-
     });
   }
 }
