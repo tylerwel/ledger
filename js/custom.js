@@ -1,7 +1,7 @@
 // generate random background color for the first row
-generateColor(row0.id);
+generateColor(row2.id);
 // generate random background color for the second row
-generateColor(row1.id);
+generateColor(row3.id);
 // for each row, generate new random background color for that row
 function generateColor(rowID) {
   // get the journalRow
@@ -129,4 +129,26 @@ function makeDebit() {
         makeCredit.classList.remove("no-display");
     });
   }
+}
+
+// initialize newRow
+newRow();
+// when newRow icon is clicked
+function newRow() {
+  // select every new row icon,
+  var newRow = document.getElementsByClassName("new-row");
+  // for each new row icon,
+  for(var i = 0; i < newRow.length; i++) {
+    // on click,
+    newRow[i].addEventListener("click", function() {
+      // if the row above is debit,
+      if(this.previousElementSibling.classList.contains("debit")) {
+        // duplicate the original debit row
+      }
+      // else,
+        // duplicate the original credit row
+    })
+
+  }
+
 }

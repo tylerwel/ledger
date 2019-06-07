@@ -160,6 +160,11 @@ input[type=date]::-webkit-outer-spin-button {
 
 .entry-attributes > input {
   font-size: 0.8rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.description {
+  width: -webkit-fill-available;
 }
 
 .material-icons {
